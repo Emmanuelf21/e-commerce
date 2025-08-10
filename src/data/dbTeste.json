@@ -200,5 +200,14 @@
       "preco": 2613,
       "descricao": "XPG SSD interno para jogos GAMMIX S70 Blade PCIe Gen4 M.2 2280 de 4 TB até 7.400 MB/s - Funciona com PlayStation 5/PS5 (AGAMMIXS70B-4T-CS) "
     }
+  ],
+  "carrinho":[],
+  "usuarios":[
+    {
+      "id": 1,
+      "nome": "emmanuel",
+      "senha": "1234",
+      "email": "emmanuel@gmail.com"
+    }
   ]
 }

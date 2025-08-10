@@ -39,15 +39,18 @@
 .container-header .container-search>.flex>menu {
     height: 58px;
 }
-.container-header .container-search>.flex>menu a{
+
+.container-header .container-search>.flex>menu a {
     text-decoration: none;
     color: #000;
 }
+
 .container-header .container-search>.flex .flex-logo {
     gap: 6.25rem;
     align-items: center;
 }
-.container-header .container-search>.flex .flex-logo a{
+
+.container-header .container-search>.flex .flex-logo a {
     text-decoration: none;
     color: #000;
 }
@@ -88,6 +91,7 @@
     height: 30px;
     align-items: center;
     gap: 20px;
+    width: 200px;
 }
 
 .container-header .container-search .user>div {
@@ -100,30 +104,24 @@
 }
 
 .container-header .container-search .user .car {
-    position: relative;
     display: flex;
-
     height: 100%;
     width: 2.5rem;
-
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.8s ease-in-out;
 }
 
-
-.container-header .container-search .user .car img,
-.container-header .container-search .user .car p {
-    position: absolute;
-
+.container-header .container-search .user .car img {
+    width: auto;
+    margin: auto;
 }
 
-.container-header .container-search .user .car p {
-    z-index: 1;
-    top: -10px;
-    right: 0;
-    background: #005cff;
-    width: 20px;
-    text-align: center;
-    color: #fff;
-    border-radius: 50%;
+.container-header .container-search .user .car:hover {
+    border-radius: 5px;
+    background:rgb(63, 167, 252);
 }
 
 .container-header .container-search .container-menu {
@@ -138,11 +136,31 @@
     object-fit: contain;
 }
 
+.container-header .login {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: 2px solid #33f;
+    background-color: #fff;
+    color: #33f;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 1.2s ease-in-out;
+}
+
+.container-header .login:hover {
+    background: rgb(19, 19, 238);
+    border-color: rgb(19, 19, 238);
+    mix-blend-mode: hard-light;
+    font-weight: 600;
+    color: #fff;
+}
+
 .banner {
     background: #E7E7EA;
     width: 100%;
     margin: auto;
     position: relative;
     top: -100px;
-    
+
 }

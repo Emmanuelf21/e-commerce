@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { NavLink } from 'react-router-dom'
 import lupa from '../assets/icones/search-icon.png'
-import arrow from '../assets/icones/gray-arrow-dropdown.png'
 import perfil from '../assets/icones/perfil.png'
 import banner from '../assets/imagens/banner.png'
+import carrinho from '../assets/icones/carrinho.png'
+import './CSS/Header.css'
+import './CSS/Dropdown.css'
+import NavDrop from './NavDrop'
+import Nav from './Nav'
 
-import './CSS/header.css'
-import './CSS/dropdown.css'
 
 
+const Header = ({abrirLogin, abrirCart}) => {
+    const [usuario, setUsuario] = useState('');
 
-const Header = () => {
+    useEffect(()=>{
+        const getCookie = (nome) => {
+            const cookies = document.cookie.split("; ").find((row) => row.startsWith(nome + "="));
+            return cookies ? cookies.split("=")[1] : null;
+          };
+      
+          const nomeUsuario = getCookie("usuario"); // nome do cookie
+          if (nomeUsuario) {
+            setUsuario(decodeURIComponent(nomeUsuario)); // decode se tiver caracteres especiais
+          }   
+    },[])
   return (
     <>
     <header className="container-header flex">
@@ -29,8 +43,13 @@ const Header = () => {
                     </div>
                     <div className="user flex">
                         <div className="flex">
-                            <img src={perfil} alt="icone-perfil"/>
-                            <p>Olá,<br/>Nome cliente</p>
+                            {usuario ? <>
+                            <img src={perfil} alt="icone-perfil"/> 
+                            <p>Bem-vindo, <br/>{usuario}!</p>
+                            <button className="car" onClick={abrirCart}> 
+                                <img src={carrinho} alt="carrinho"/>
+                            </button>
+                            </> : <button className='login' onClick={abrirLogin}>Logar</button>}
                         </div>
                         {/* <NavLink to='/Compras' className="car"> 
                             <img src={carrinho} alt="carrinho"/>
@@ -46,47 +65,12 @@ const Header = () => {
                         <div className="dropdown-departamentos-categorias flex">
                             <div className="departamentos-categorias flex">
                                 <div className="departamentos flex">
-                                    <NavLink to='#' className="departamento">
-                                        <p>Cadeiras</p>
-                                        <img src={arrow} alt=""/>
-                                    </NavLink>
-                                    <NavLink to='#' className="departamento">
-                                        <p>Teclados</p>
-                                        <img src={arrow} alt=""/>
-                                    </NavLink>
-                                    <NavLink to='#' className="departamento">
-                                        <p>Monitores</p>
-                                        <img src={arrow} alt=""/>
-                                    </NavLink>
-                                    
-                                    <NavLink to='#' className="departamento">
-                                        <p>Fones de Ouvido</p>
-                                        <img src={arrow} alt=""/>
-                                    </NavLink>
-                                    <NavLink to='#' className="departamento">
-                                        <p>SSDs</p>
-                                        <img src={arrow} alt=""/>
-                                    </NavLink>
-                                    
+                                    <NavDrop/>   
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <NavLink to='#' className="dropdown-menu-categorias menu-categorias">
-                        <p>Cadeiras</p>
-                    </NavLink >
-                    <NavLink to='#' className="dropdown-menu-categorias menu-categorias" >
-                        <p>Teclados</p>
-                    </NavLink >
-                    <NavLink to='#' className="dropdown-menu-categorias menu-categorias">
-                        <p>Monitores</p>
-                    </NavLink >
-                    <NavLink to='#' className="dropdown-menu-categorias menu-categorias">
-                        <p>Fones de ouvido</p>
-                    </NavLink >
-                    <NavLink to='#' className="dropdown-menu-categorias menu-categorias">
-                        <p>SSDs</p>
-                    </NavLink >
+                    <Nav/>
                 </menu>
             </div>
             

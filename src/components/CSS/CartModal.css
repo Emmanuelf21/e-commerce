@@ -1,0 +1,46 @@
+
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modal-content li {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-content li button {
+  background-color: #f33;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.modal-content li button:hover {
+  background-color: #9a0007;
+}
+
+.modal-content>button{
+  width: fit-content;
+  padding: 4px 12px;
+  cursor: pointer;
+  border: 2px solid #f33;
+  background-color: transparent;
+  color: #ffffffce;
+  transition: all 0.8s ease-in-out;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.modal-content>button:hover {
+  background: rgb(238, 19, 19);
+  border-color: rgb(238, 19, 19);
+  mix-blend-mode: hard-light;
+  color: #fff;
+}
