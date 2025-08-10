@@ -11,7 +11,7 @@ const LoginModal = ({ fecharLogin }) => {
       (u) => u.email.toLowerCase() === email.toLowerCase() && u.senha === senha
     );
 
-    if (usuarioEncontrado) {
+    if (usuarioEncontrado) { //verifica se existe o usuário e armazena ele nos cookies
       // Cria cookie compatível com o getCookie do Header
       document.cookie = `usuario=${encodeURIComponent(usuarioEncontrado.nome)}; path=/`;
 

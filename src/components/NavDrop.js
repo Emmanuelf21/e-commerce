@@ -3,6 +3,7 @@ import { NavLink } from 'react-router'
 import arrow from '../assets/icones/gray-arrow-dropdown.png'
 
 const NavDrop = () => {
+    //Dropdown da navbar
   return (
     <>
     <NavLink to='/produtos?q=Cadeira' className="departamento">

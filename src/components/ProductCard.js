@@ -12,7 +12,8 @@ function getCookie(nome) {
   return null;
 }
 
-const ProductCard = ({ produto }) => {
+const ProductCard = ({ produto }) => { 
+  //armazena o produto no carrinho através do localstorage
   const [carrinho, setCarrinho] = useState(() => {
     const salvo = localStorage.getItem('carrinho');
     return salvo ? JSON.parse(salvo) : [];
@@ -21,7 +22,7 @@ const ProductCard = ({ produto }) => {
   const adicionarAoCarrinho = (produto) => {
     const usuario = getCookie('usuario'); // verifica se existe o cookie "usuario"
 
-    if (!usuario) {
+    if (!usuario) { //verifica se o usuário está logado para poder adicionar produto no carrinho
       alert('Você precisa estar logado para adicionar produtos ao carrinho.');
       return;
     }
@@ -36,7 +37,7 @@ const ProductCard = ({ produto }) => {
     alert('Produto adicionado ao carrinho!');
     console.log(localStorage.getItem('carrinho'));
   };
-
+  // Criação do card do produto
   return (
     <div key={produto.id} className="product-card">
       <img

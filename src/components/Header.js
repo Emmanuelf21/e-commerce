@@ -70,6 +70,7 @@ const Header = ({abrirLogin, abrirCart}) => {
                             </div>
                         </div>
                     </div>
+                    
                     <Nav/>
                 </menu>
             </div>
