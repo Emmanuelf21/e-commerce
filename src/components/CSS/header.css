@@ -91,7 +91,7 @@
     height: 30px;
     align-items: center;
     gap: 20px;
-    width: 200px;
+    width: 250px;
 }
 
 .container-header .container-search .user>div {
@@ -154,6 +154,26 @@
     top: -100px;
 
 }
+.btn-sair {
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 2px solid #f33;
+  background-color: transparent;
+  color: #f33;
+  transition: all 0.8s ease-in-out;
+}
+
+.btn-sair:hover {
+  background: rgb(238, 19, 19);
+  border-color: rgb(238, 19, 19);
+  mix-blend-mode: hard-light;
+  color: #fff;
+}
+
 @media (max-width: 1540px) {
     .container-header {
       padding-top: 5px;

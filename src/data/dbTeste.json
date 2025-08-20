@@ -205,9 +205,9 @@
   "usuarios":[
     {
       "id": 1,
-      "nome": "emmanuel",
+      "nome": "teste",
       "senha": "1234",
-      "email": "emmanuel@gmail.com"
+      "email": "teste@gmail.com"
     }
   ]
 }

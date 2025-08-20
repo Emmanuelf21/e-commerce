@@ -11,10 +11,25 @@ import NavDrop from './NavDrop'
 import Nav from './Nav'
 
 
-
 const Header = ({abrirLogin, abrirCart}) => {
     const [usuario, setUsuario] = useState('');
-
+    
+    const handleLogout = () => {
+        // Pega todos os cookies
+        const cookies = document.cookie.split(";");
+      
+        // Percorre e expira cada cookie
+        for (let cookie of cookies) {
+          const eqPos = cookie.indexOf("=");
+          const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      
+          // Apaga o cookie setando expiração no passado
+          document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+        }
+      
+        // Redireciona para login
+        window.location.href = "/";
+      };
     useEffect(()=>{
         const getCookie = (nome) => {
             const cookies = document.cookie.split("; ").find((row) => row.startsWith(nome + "="));
@@ -49,11 +64,10 @@ const Header = ({abrirLogin, abrirCart}) => {
                             <button className="car" onClick={abrirCart}> 
                                 <img src={carrinho} alt="carrinho"/>
                             </button>
+                            <button className='btn-sair' onClick={()=>handleLogout()}>sair</button>
                             </> : <button className='login' onClick={abrirLogin}>Logar</button>}
                         </div>
-                        {/* <NavLink to='/Compras' className="car"> 
-                            <img src={carrinho} alt="carrinho"/>
-                        </NavLink> */}
+                        
                     </div>
                 </div>
                 <menu className="container-menu flex">
